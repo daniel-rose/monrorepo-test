@@ -4,4 +4,5 @@ namespace YourMonorepo\FirstPackage;
 
 final class FirstClass
 {
+	public const X = 'X';
 }
