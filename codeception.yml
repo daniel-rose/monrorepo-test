@@ -1,0 +1,9 @@
+include:
+  - packages/second-package/
+
+settings:
+  shuffle: true
+  lint: true
+
+paths:
+  output: output

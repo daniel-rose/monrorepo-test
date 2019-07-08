@@ -4,6 +4,7 @@ parameters:
         - 'require'
         - 'require-dev'
         - 'autoload'
+        - 'autoload-dev'
 
     # for "merge" command
     data_to_append:

@@ -1,0 +1,24 @@
+language: php
+
+php:
+  - 7.1
+
+env:
+  COMPOSER_MEMORY_LIMIT=-1
+
+cache:
+  directories:
+    - vendor
+    - $HOME/.composer/cache
+
+install:
+  - composer install --no-interaction --prefer-dist
+
+jobs:
+  include:
+    - stage: test
+      script: vendor/bin/codecept run
+    - stage: split repo
+      script: vendor/bin/monorepo-builder split -vvv
+      if: tag =~ ^\d+\.\d+\.\d+$
+
